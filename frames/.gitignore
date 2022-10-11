@@ -1,0 +1,3 @@
+# Don't push a 30 TB commit to git
+*.jpg
+*.jpeg
