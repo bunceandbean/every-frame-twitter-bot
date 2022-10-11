@@ -20,7 +20,7 @@ python generate_frames.py video_filepath frame_offset
 
 The argument `video_filepath` is the filepath to the video you want to turn into a series of frames. The `frame_offset` argument is how fine you want the frame splicing to be. This argument is an integer, and will only choose every `frame_offset`'th frame to turn into a jpg file. If you want the frames as is (which might be necessary with videos with a slower framerate), simply put "1" as the argument.
 
-<i>***As a word of caution - the generation process can take awhile especially on slower machines. If your video is excessively long or has a very high framerate, please consider this before running the program.</i>
+<i><b>***The generation process can take awhile especially on slower machines. If your video is excessively long or has a very high framerate, please consider this before running the program.</b></i>
 
 ### Constants
 In the repository, there is a ```constants.txt``` file. Fill in the fields with information regarding your frames, such as how many frames you have to sort through. Along with this there is a field for ```FILEPATH```. This field is primarily for people who are running this code on servers who need absolute filepaths to run the code. If this does not apply to you, you can simply leave it as an empty string. If you <b>ARE</b> running this code on said server, fill that field out with the filepath where this repository is stored.
