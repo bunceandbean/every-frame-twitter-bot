@@ -16,7 +16,7 @@ In the repository, there is a ```generate_frames.py``` file. In order to generat
 ```
 python generate_frames.py video_filepath frame_offset
 ```
-<img align="left" src="https://giffiles.alphacoders.com/112/11288.gif" width = "190" height = "190">
+<img align="left" src="https://giffiles.alphacoders.com/112/11288.gif" width = "220" height = "220">
 
 The argument `video_filepath` is the filepath to the video you want to turn into a series of frames. The `frame_offset` argument is how fine you want the frame splicing to be. This argument is an integer, and will only choose every `frame_offset`'th frame to turn into a jpg file. If you want the frames as is (which might be necessary with videos with a slower framerate), simply put "1" as the argument.
 
