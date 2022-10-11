@@ -1,8 +1,6 @@
 import tweepy
 from sys import exit
-from datetime import datetime as dt
 from time import sleep
-import requests
 from credentials import *
 
 # Authenticate to Twitter
@@ -14,10 +12,15 @@ try:
 except:
     exit("Twitter Verification Failure")
 
+# Get the next frame filename
+def next_frame(frame_number: int) -> str:
+    return "frame" + str(frame_number + 1) + ".jpg"
+
+
 # Make tweet
-def make_tweet():
+def make_tweet(text: str, frame: str):
     try:
-        api.update_status_with_media(status="Test", filename="current_photo.jpg")
+        api.update_status_with_media(status=text, filename=frame)
         return 1
     except:
         return 0

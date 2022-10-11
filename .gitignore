@@ -15,3 +15,6 @@ __pycache__
 
 # Don't push a 30 TB commit to git
 frames/*
+
+# Constants file for user specification
+constants.py
