@@ -1,7 +1,8 @@
 import tweepy
 from sys import exit
 from time import sleep
-from credentials import *
+from user_values.credentials import *
+from user_values.constants import *
 
 # Authenticate to Twitter
 try:
@@ -27,7 +28,7 @@ def make_tweet(text: str, frame: str):
 
 # Main code to run
 def main():
-    if not make_tweet():
+    if not make_tweet("Test", "test.jpeg"):
         exit("Tweet Creation Failure")
 
 if __name__ == "__main__":
