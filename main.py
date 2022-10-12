@@ -19,7 +19,7 @@ def next_frame(frame_number: int) -> str:
 
 
 # Make tweet
-def make_tweet(text: str, frame: str):
+def make_tweet(text: str, frame: str) -> int:
     try:
         api.update_status_with_media(status=text, filename=frame)
         return 1
@@ -28,8 +28,11 @@ def make_tweet(text: str, frame: str):
 
 # Main code to run
 def main():
-    if not make_tweet("Test", "test.jpeg"):
-        exit("Tweet Creation Failure")
+    for i in range(FRAME_AMOUNT):
+        text = VIDEO_TITLE + " - Frame " + str(i+1) + "/" + str(FRAME_AMOUNT)
+        if not make_tweet(text, "frames/frame" + str(i) + ".jpg"):
+            exit("Tweet Creation Failure")
+        sleep(POST_FREQUENCY_IN_SECONDS)
 
 if __name__ == "__main__":
     main()
