@@ -17,7 +17,6 @@ except:
 def next_frame(frame_number: int) -> str:
     return f"frame{frame_number + 1}.jpg"
 
-
 # Make tweet
 def make_tweet(text: str, frame: str) -> int:
     try:
