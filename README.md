@@ -24,9 +24,19 @@ The argument `video_filepath` is the filepath to the video you want to turn into
 ### Constants
 In the repository, there is a ```constants.txt``` file. Fill in the fields with information regarding your video, such as how many frames you have to sort through (the first frame will start at "frame0.jpg"), the video title, and the frequency of Twitter posting. Along with this there is a field for ```FILEPATH```. This field is primarily for people who are running this code on servers who need absolute filepaths to run the code. If this does not apply to you, you can simply leave it as an empty string. If you <b>ARE</b> running this code on said server, fill that field out with the filepath where this repository is stored. Change the extension to ```.py``` after completion.
 
+### Starting Frame
+There is a file in ```frames/``` entitled ```last_frame.txt```. This file will be written to with the frame number that was last tweeted. This is specifically designed for programs that will have this bot always run in case the program crashes. Instead of starting over, the bot will continue from the last frame tweeted. It is set to -1 currently, but you can change this value if you would like to start the bot at a specific frame number.
+
 ### Deploying
 To deploy the bot, simply run the ```main.py``` file, such as using the command:
 ```
 python main.py
 ```
-Your constants and credentials will be pulled in and the bot will run with your specifications. The bot will run for as long as it takes to post every frame. Due to the longevity of some videos, it is recommended to use a server to host the code so that it will run for as long as needed. 
+Your constants and credentials will be pulled in and the bot will run with your specifications. The bot will run for as long as it takes to post every frame. Due to the longevity of some videos, it is recommended to use a server to host the code so that it will run for as long as needed.
+
+# License
+This bot is under a [MIT License](https://choosealicense.com/licenses/mit/). Feel free to use this bot for any purpose. Credit is not needed but is appreciated.
+
+<p align="center">
+<img align="center" src="https://benlilley.neocities.org/fmf.gif" width = "250" height = "200">
+</p>
