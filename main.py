@@ -42,6 +42,7 @@ def main():
 
     frame_file.close()
     exit("Process Completed")
+    sleep(600)
 
 if __name__ == "__main__":
     main()
