@@ -1,6 +1,7 @@
 import tweepy
 from sys import exit
 from time import sleep
+import requests
 from user_values.credentials import *
 from user_values.constants import *
 
@@ -34,7 +35,7 @@ def main():
 
     for i in range(starting_frame, FRAME_AMOUNT):
         text = f"{VIDEO_TITLE} - Frame {i+1}/{FRAME_AMOUNT}"
-        if not make_tweet(text, f"{FRAME_FILEPATH}frames/{next_frame(i)}"):
+        if not make_tweet(text, f"{FILEPATH}frames/{next_frame(i)}"):
             exit("Tweet Creation Failure")
         frame_file.truncate(0)
         frame_file.write(f"{i}")
@@ -42,7 +43,7 @@ def main():
 
     frame_file.close()
     exit("Process Completed")
-    
+
     sleep(600)
 
 if __name__ == "__main__":
