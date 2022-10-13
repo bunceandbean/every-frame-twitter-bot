@@ -15,7 +15,7 @@ except:
 
 # Get the next frame filename
 def next_frame(frame_number: int) -> str:
-    return f"frame{frame_number + 1}.jpg"
+    return f"frame{frame_number}.jpg"
 
 # Make tweet
 def make_tweet(text: str, frame: str) -> int:
@@ -29,12 +29,12 @@ def make_tweet(text: str, frame: str) -> int:
 def main():
 
     # Read from frame file and start from next frame in case of crash
-    frame_file = open(f"{FILEPATH}frames/last_frame.txt", 'r+')
+    frame_file = open(f"{FILEPATH}last_frame.txt", 'r+')
     starting_frame = int(frame_file.readline()) + 1
 
     for i in range(starting_frame, FRAME_AMOUNT):
         text = f"{VIDEO_TITLE} - Frame {i+1}/{FRAME_AMOUNT}"
-        if not make_tweet(text, f"{FILEPATH}frames/frame{i}.jpg"):
+        if not make_tweet(text, f"{FRAME_FILEPATH}frames/{next_frame(i)}"):
             exit("Tweet Creation Failure")
         frame_file.truncate(0)
         frame_file.write(f"{i}")
@@ -42,6 +42,7 @@ def main():
 
     frame_file.close()
     exit("Process Completed")
+    
     sleep(600)
 
 if __name__ == "__main__":
