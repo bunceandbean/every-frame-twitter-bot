@@ -1,7 +1,7 @@
 import cv2
 from sys import argv
 from sys import exit
-from user_values.constants import FRAME_FILEPATH
+from user_values.constants import FILEPATH
 
 filename, frame_offset = argv[1], argv[2]
 
@@ -19,7 +19,7 @@ count = 0
 img_tag = 0
 while success:
     if count % frame_offset == 0:
-        cv2.imwrite(FRAME_FILEPATH+"frames/frame%d.jpg" % img_tag, image)
+        cv2.imwrite(FILEPATH+"frames/frame%d.jpg" % img_tag, image)
         img_tag += 1
     success,image = vidcap.read()
     count += 1
