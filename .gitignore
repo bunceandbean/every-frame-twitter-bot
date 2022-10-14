@@ -1,20 +1,14 @@
-# For us pleb macbook users
+# For us MacBook users
 .DS_Store
 
 # File containing API key data.
 credentials.py
 
-# File with explicit keys
-local_main.py
-
-# Video to become series of frames
-to_frame.mp4
+# Video to become series of frames (placed by user)
+*.mp4
 
 # For us pleb python users
 __pycache__
 
 # Constants file for user specification
 constants.py
-
-# Test image
-test.jpeg

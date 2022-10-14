@@ -33,6 +33,7 @@ def main():
     frame_file = open(f"{FILEPATH}last_frame.txt", 'r+')
     starting_frame = int(frame_file.readline()) + 1
 
+    # For loop being used to iterate through frame numbers - faster than file i/o
     for i in range(starting_frame, FRAME_AMOUNT):
         text = f"{VIDEO_TITLE} - Frame {i+1}/{FRAME_AMOUNT}"
         if not make_tweet(text, f"{FILEPATH}frames/{next_frame(i)}"):
@@ -42,9 +43,8 @@ def main():
         sleep(POST_FREQUENCY_IN_SECONDS)
 
     frame_file.close()
-    exit("Process Completed")
-
-    sleep(600)
+    print("Process Completed")
 
 if __name__ == "__main__":
     main()
+    sleep(600)
