@@ -31,7 +31,7 @@ def main():
 
     # Read from frame file and start from next frame in case of crash
     frame_file = open(f"{FILEPATH}last_frame.txt", 'r+')
-    starting_frame = int(frame_file.readline()) + 1
+    starting_frame = int(frame_file.readline().rstrip()) + 1
 
     # For loop being used to iterate through frame numbers - faster than file i/o
     for i in range(starting_frame, FRAME_AMOUNT):
