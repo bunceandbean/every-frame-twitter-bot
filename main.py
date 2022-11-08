@@ -32,17 +32,19 @@ def main():
     # Read from frame file and start from next frame in case of crash
     frame_file = open(f"{FILEPATH}last_frame.txt", 'r+')
     starting_frame = int(frame_file.readline().rstrip()) + 1
+    frame_file.close()
 
     # For loop being used to iterate through frame numbers - faster than file i/o
     for i in range(starting_frame, FRAME_AMOUNT):
         text = f"{VIDEO_TITLE} - Frame {i+1}/{FRAME_AMOUNT}"
         if not make_tweet(text, f"{FILEPATH}frames/{next_frame(i)}"):
             exit("Tweet Creation Failure")
+        frame_file = open(f"{FILEPATH}last_frame.txt", 'r+')
         frame_file.truncate(0)
         frame_file.write(f"{i}")
+        frame_file.close()
         sleep(POST_FREQUENCY_IN_SECONDS)
 
-    frame_file.close()
     print("Process Completed")
 
 if __name__ == "__main__":
